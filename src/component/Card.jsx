@@ -1,9 +1,4 @@
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Typography,
-} from "@material-tailwind/react";
+import { Card, CardHeader, CardBody } from "@material-tailwind/react";
 
 export function BookingCard({ pd }) {
   return (
@@ -15,24 +10,16 @@ export function BookingCard({ pd }) {
           className="h-56 w-full object-cover"
         />
         <div className="absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60" />
-        <Typography
-          size="sm"
-          color="red"
-          variant="text"
-          className="!absolute top-4 right-4 rounded-full bg-primary px-3 text-white"
-        >
+        <div className="!absolute top-4 right-4 rounded-full bg-primary px-3 text-white text-sm">
           $: {pd.price}
-        </Typography>
+        </div>
       </CardHeader>
       <CardBody>
         <div className="mb-3 flex items-center justify-between">
-          <Typography variant="h5" color="blue-gray" className="font-medium">
+          <div className="text-lg font-medium text-blue-gray">
             {pd.productName}
-          </Typography>
-          <Typography
-            color="blue-gray"
-            className="flex items-center gap-1.5 font-normal"
-          >
+          </div>
+          <div className="flex items-center gap-1.5 text-blue-gray">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -46,17 +33,13 @@ export function BookingCard({ pd }) {
               />
             </svg>
             {pd.ratings}
-          </Typography>
+          </div>
         </div>
-        <div className="flex justify-between my-2">
-          <Typography color="gray">
-            <span>{pd.category}</span>
-          </Typography>
-          <Typography color="gray">
-            {new Date(pd.createdAt).toLocaleDateString()}
-          </Typography>
+        <div className="flex justify-between my-2 text-gray-500">
+          <span>{pd.category}</span>
+          <span>{new Date(pd.createdAt).toLocaleDateString()}</span>
         </div>
-        <Typography color="gray">{pd.description}</Typography>
+        <p className="text-gray-500">{pd.description}</p>
       </CardBody>
     </Card>
   );
