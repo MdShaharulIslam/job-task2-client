@@ -36,7 +36,7 @@ const Display = () => {
     queryKey: ["product", page, queryKey, value, category, maximum, minimum, brand],
     queryFn: async () => {
       const response = await axiosCommon.get(
-        `https://job-task2-server.vercel.app/product?page=${page}&search=${queryKey}&sort=${value}&brand=${brand}&category=${category}&minimum=${minimum}&maximum=${maximum}`
+        `product?page=${page}&search=${queryKey}&sort=${value}&brand=${brand}&category=${category}&minimum=${minimum}&maximum=${maximum}`
       );
       
       return response.data;
